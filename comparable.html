@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+ 
+	
+	
+	<head>
+		<title>Tech Read</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	
+	
+	
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo"><strong>Himanshu</strong> <span>Welcome to My World!</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">My Portfolio</a></li>
+							<li><a href="landing.html">Publications</a></li>
+							<li><a href="generic.html">Tech Stack</a></li>
+							<li><a href="blogging/blog.html">Blog</a></li>
+						</ul>
+						<ul class="actions stacked">
+						
+						<li><a href="https://www.youtube.com/@techntraders4995/videos" class="button primary fit">YouTube</a></li>
+							<li><a href="https://www.linkedin.com/in/himanshu-gupta-techntraders/" class="button fit">LinkedIn</a></li>
+						
+						
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>Understanding Comparable and Comparator in Java</h1>
+									</header>
+									
+									
+									
+									 
+									<p>Introduction:
+In Java, sorting and comparing objects are common operations in many applications. The Comparable and Comparator interfaces provide mechanisms to achieve object comparison and sorting based on specific criteria. Understanding these interfaces is essential for efficient and flexible sorting in Java.<br>
+
+<p>
+Comparable Interface:
+The Comparable interface is a part of the Java API and is implemented by a class to provide a natural ordering for its objects. It defines a single method, compareTo(), which compares the object with another object of the same type. The compareTo() method returns a negative integer, zero, or a positive integer, indicating if the current object is less than, equal to, or greater than the compared object, respectively.<br>
+
+Implementing the Comparable interface enables objects of a class to be sorted using the Collections.sort() method or by utilizing sorting algorithms that rely on the natural ordering defined by compareTo().<br>
+
+</p>
+<p>
+Comparator Interface:
+The Comparator interface is another mechanism for comparing objects in Java. Unlike Comparable, which defines the natural ordering within a class, the Comparator interface allows for custom comparison logic to be defined separately from the target class. This provides flexibility when sorting objects based on different criteria or when sorting classes that do not implement Comparable.
+
+The Comparator interface defines a single method, compare(), which compares two objects. It returns a negative integer, zero, or a positive integer, indicating if the first object is less than, equal to, or greater than the second object, respectively.<br>
+</p>
+<p>
+Usage of Comparable and Comparator:
+The Comparable interface is typically used when the natural ordering within a class is sufficient and consistent with the object's definition. It allows objects to be sorted without explicitly specifying a separate comparator.
+
+On the other hand, the Comparator interface is used when custom or alternative sorting criteria are required, or when sorting classes that do not implement Comparable. It provides a way to decouple the sorting logic from the target class.
+
+Both Comparable and Comparator offer powerful features for sorting objects in Java. The choice between them depends on the specific requirements and design of the application.
+</p>
+
+									
+									<p>Conclusion:
+In Java, the Comparable and Comparator interfaces are essential for sorting and comparing objects. By implementing Comparable, classes define a natural ordering for their objects, enabling them to be sorted easily. The Comparator interface, on the other hand, provides flexibility to define custom comparison logic separately from the target class. Understanding these interfaces empowers developers to implement efficient and flexible sorting mechanisms in their Java applications.</p>
+								
+								 
+								</div>
+								
+								
+								  
+								
+								  <iframe align: "center" width="560" height="315" src="https://www.youtube.com/embed/CyFfWQa8nyU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe align: "center" width="560" height="315" src="https://www.youtube.com/embed/Df-H968QELY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+							</section>
+
+					</div>
+
+				<!-- Contact -->
+					<section id="contact">
+						<div class="inner">
+							<section>
+								
+								 
+								<form method="post" action="mailto: himanshugupta11094@gmail.com">
+									<div class="fields">
+										<div class="field half">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="text" name="email" id="email" />
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="6"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="primary" /></li>
+										
+										<li><input type="reset" value="Clear" /></li>
+									</ul>
+								</form>   
+								
+								<!--
+								
+								<form action="mailto:himanshugupta11094@gmail.com" method="post" enctype="text/plain">
+ Name:<br>
+<input type="text" name="name"><br>
+ E-mail:<br>
+<input type="text" name="mail"><br>
+Comment:<br>
+<input type="text" name="comment" size="50"><br><br>
+<input type="submit" value="Send">
+<input type="reset" value="Reset">
+
+   <form action="send-email.php" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name"><br>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email"><br>
+
+      <label for="subject">Subject:</label>
+      <input type="text" id="subject" name="subject"><br>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message"></textarea><br>
+
+      <input type="submit" value="Send">
+    </form>
+	
+	-->
+
+								
+							</section>
+							
+							
+							<section class="split">
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-envelope"></span>
+										<h3>Email</h3>
+										<a href="#">himanshugupta11094@gmail.com</a>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-phone"></span>
+										<h3>Phone</h3>
+										<span>+91-8586935009</span>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-home"></span>
+										<h3>Address</h3>
+										<span>Delhi,
+										
+										India</span>
+									</div>
+								</section>
+							</section>
+							
+							
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+							<li><a href="https://www.youtube.com/@techntraders4995/playlists" class="icon brands alt fa-youtube"><span class="label">YouTube</span></a></li>
+								<li><a href="https://twitter.com/TechnTraders" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="https://www.facebook.com/himanshusmartydude/" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="https://www.instagram.com/himanshugupta_110/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="https://github.com/Himanshu11094?tab=repositories" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="https://www.linkedin.com/in/himanshu-gupta-techntraders/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://wa.me/+918586935009" class="icon brands alt fa-whatsapp"><span class="label">WhatsApp</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

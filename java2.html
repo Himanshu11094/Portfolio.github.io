@@ -1,0 +1,277 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Gallery</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		
+		
+		 
+		
+		
+	</head>
+	
+	  <style>
+    /* CSS styling for layout */
+     .container {
+      display: flex;
+    }
+   
+    .slider-container {
+      flex-basis: 20%; /* Set the width of the slider column */
+      background-color: #000000;
+      overflow-y: auto; /* Enable scrolling for the slider */
+      padding: 20px;
+    }
+    .slider {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    
+    .slider-item {
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+    
+    .content {
+      flex-grow: 1; /* Allow content to grow and occupy remaining space */
+      padding: 20px;
+      background-color: #242943;
+    }
+    
+    .active {
+      font-weight: bold;
+    }
+  </style>
+	
+	
+	
+	
+	<body class="is-preload">
+	
+	
+	<script>
+    // JavaScript function to update the content based on the selected index item
+    function showContent(contentId) {
+      // Get all content items and hide them
+      var contentItems = document.getElementsByClassName('content-item');
+      for (var i = 0; i < contentItems.length; i++) {
+        contentItems[i].style.display = 'none';
+      }
+      
+      // Show the selected content item
+      var selectedContent = document.getElementById(contentId);
+      selectedContent.style.display = 'block';
+      
+      // Update the active index item
+      var indexItems = document.getElementsByClassName('slider-item');
+      for (var i = 0; i < indexItems.length; i++) {
+        indexItems[i].classList.remove('active');
+      }
+      var selectedIndexItem = document.getElementById(contentId + '-index');
+      selectedIndexItem.classList.add('active');
+    }
+    
+    // JavaScript function to add a new index item dynamically
+    function addIndexItem() {
+      var newIndexItemText = prompt("Enter the text for the new index item:");
+      if (newIndexItemText) {
+        var slider = document.getElementById('slider');
+        
+        var newSliderItem = document.createElement('li');
+        newSliderItem.className = 'slider-item';
+        newSliderItem.textContent = newIndexItemText;
+        newSliderItem.onclick = function() {
+          showContent('content' + slider.children.length);
+        };
+        
+        slider.appendChild(newSliderItem);
+        
+        var newContentItem = document.createElement('div');
+        newContentItem.id = 'content' + slider.children.length;
+        newContentItem.className = 'content-item';
+        newContentItem.style.display = 'none';
+        newContentItem.innerHTML = '<h1>Content ' + slider.children.length + '</h1>' +
+                                   '<p>This is the content for Item ' + slider.children.length + '.</p>';
+        
+        var content = document.getElementsByClassName('content')[0];
+        content.appendChild(newContentItem);
+      }
+    }
+  </script>
+	
+	
+	
+	
+	 <div class="container">
+    <div class="slider-container">
+      <!-- Left side slider -->
+      <ul class="slider">
+        <li class="slider-item active" onclick="showContent('content1')">Introduction</li>
+        <li class="slider-item" onclick="showContent('content2')">Example of Comparable</li>
+        <li class="slider-item" onclick="showContent('content3')">Example of Comparator</li>
+		<li class="slider-item" onclick="showContent('content4')">Usage </li>
+		<li class="slider-item" onclick="showContent('content5')">Conclusion</li>
+      </ul>
+    </div>
+    <div class="content">
+      <!-- Right side content -->
+      <div id="content1" class="content-item" style="display: block;">
+        <h1>Comparable and Comparator in Java</h1>
+		
+        <p>Introduction:
+In Java, sorting and comparing objects are common operations in many applications. The Comparable and Comparator interfaces provide mechanisms to achieve object comparison and sorting based on specific criteria. Understanding these interfaces is essential for efficient and flexible sorting in Java.
+<br>
+Comparable Interface:
+The Comparable interface is a part of the Java API and is implemented by a class to provide a natural ordering for its objects. It defines a single method, compareTo(), which compares the object with another object of the same type. The compareTo() method returns a negative integer, zero, or a positive integer, indicating if the current object is less than, equal to, or greater than the compared object, respectively.
+<br>
+Implementing the Comparable interface enables objects of a class to be sorted using the Collections.sort() method or by utilizing sorting algorithms that rely on the natural ordering defined by compareTo().</p>
+      
+	  
+	  
+	  </div>
+      <div id="content2" class="content-item" style="display: none;">
+        <h1>Example of Comparable:</h1>
+        <p>Consider a class Person representing individuals with attributes such as name and age. 
+		<br>We can implement the Comparable interface to sort Person objects based on their age:
+
+
+    <br>public class Person implements Comparable<Person> {
+    <br>private String name;
+    <br>private int age;
+
+   <br> // Constructors, getters, and setters
+
+    <br>@Override
+    <br>public int compareTo(Person other) {
+       <br> return this.age - other.age;
+   <br> }
+<br>}
+<br>In this example, the compareTo() method compares Person objects based on their age. By implementing Comparable, we can easily sort a list of Person objects using Collections.sort().
+
+<br>Comparator Interface:
+<br>The Comparator interface is another mechanism for comparing objects in Java. Unlike Comparable, which defines the natural ordering within a class, the Comparator interface allows for custom comparison logic to be defined separately from the target class. This provides flexibility when sorting objects based on different criteria or when sorting classes that do not implement Comparable.
+
+<br>The Comparator interface defines a single method, compare(), which compares two objects. It returns a negative integer, zero, or a positive integer, indicating if the first object is less than, equal to, or greater than the second object, respectively.</p>
+      </div>
+      <div id="content3" class="content-item" style="display: none;">
+        <h1>Content 3</h1>
+        <p>This is the content for Item 3.</p>
+      </div>
+	  
+	  <div id="content4" class="content-item" style="display: none;">
+        <h1>Usage of Comparable and Comparator:</h1>
+        <p>The Comparable interface is typically used when the natural ordering within a class is sufficient and consistent with the object's definition. It allows objects to be sorted without explicitly specifying a separate comparator.
+
+On the other hand, the Comparator interface is used when custom or alternative sorting criteria are required, or when sorting classes that do not implement Comparable. It provides a way to decouple the sorting logic from the target class.
+
+Both Comparable and Comparator offer powerful features for sorting objects in Java. The choice between them depends on the specific requirements and design of the application.</p>
+      </div>
+	  
+	  
+	  <div id="content5" class="content-item" style="display: none;">
+        <h1>Conclusion</h1>
+        <p>In Java, the Comparable and Comparator interfaces are essential for sorting and comparing objects. By implementing Comparable, classes define a natural ordering for their objects, enabling them to be sorted easily. The Comparator interface, on the other hand, provides flexibility to define custom comparison logic separately from the target class. Understanding these interfaces empowers developers to implement efficient and flexible sorting mechanisms in their Java applications.</p>
+      </div>
+	  
+    </div>
+  </div>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+ 
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="landing.html">Publications</a></li>
+							<li><a href="generic.html">Tech Stack</a></li>
+							<li><a href="blogging/blog.html">Blog</a></li>
+						</ul>
+						<ul class="actions stacked">
+							<li><a href="#" class="button primary fit">Get Started</a></li>
+							<li><a href="#" class="button fit">Log In</a></li>
+						</ul>
+					</nav>
+
+				<!-- Banner -->
+					 
+
+				<!-- Main -->
+				<title>Image Gallery</title>
+	<style>
+		/* Style the gallery container */
+		.gallery {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			max-width: 800px;
+			margin: 0 auto;
+		}
+
+		/* Style the gallery images */
+		.gallery img {
+			width: 200px;
+			height: 200px;
+			object-fit: cover;
+			margin: 10px;
+			border-radius: 5px;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+		}
+
+		/* Style the gallery image caption */
+		.gallery figcaption {
+			text-align: center;
+			font-size: 1.2rem;
+			color: #333;
+			margin-top: 5px;
+		}
+	</style>
+			 
+ 
+
+						
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+							<li><a href="https://www.youtube.com/@techntraders4995/playlists" class="icon brands alt fa-youtube"><span class="label">YouTube</span></a></li>
+								<li><a href="https://twitter.com/TechnTraders" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="https://www.facebook.com/himanshusmartydude/" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="https://www.instagram.com/himanshugupta_110/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="https://github.com/Himanshu11094?tab=repositories" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="https://www.linkedin.com/in/himanshu-gupta-techntraders/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://wa.me/+918586935009" class="icon brands alt fa-whatsapp"><span class="label">WhatsApp</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
